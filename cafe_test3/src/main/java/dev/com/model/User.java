@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,7 +16,7 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_index")
-	private Long index;
+	private long index;
 
 	@Column(name = "user_id", nullable = false)
 	private String id;
@@ -24,11 +25,10 @@ public class User {
 	@Column(name = "user_name", nullable = false)
 	private String name;
 
-	@OneToMany(mappedBy = "user")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
 	private List<Posting> posting = new ArrayList<>();
 
 	public User() {
-		super();
 	}
 
 	public User(Long index, String password) {
@@ -90,5 +90,18 @@ public class User {
 	public void setPosting(List<Posting> posting) {
 		this.posting = posting;
 	}
+
+	@Override
+	public String toString() {
+		String result = "User [index=" + index + ", id=" + id + ", password=" + password + ", name=" + name + ", posting length ="
+				+ posting.size() + "]\n";
+		
+		for (Posting post : posting) {
+			result += post.getTitle() + "\n";
+		}
+		System.out.println(result);
+		return result;
+	}
+	
 
 }

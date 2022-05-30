@@ -1,8 +1,8 @@
 # **cafe-API**
  온라인 카페에서 유저, 게시글을 CRUD 하는 시스템 구현하는 미니 프로젝트
 
-[프로젝트 리포지토리](https://github.com/soulchicken/cafe-API)
-
+- [프로젝트 리포지토리](https://github.com/soulchicken/cafe-API)
+- [API DOCS](https://documenter.getpostman.com/view/21185842/Uz5CNdz2)
 ## **00. 팀원 소개**
 
 -   **[황솔희](https://github.com/solhee-hwang)** : asd 구현

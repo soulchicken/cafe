@@ -31,7 +31,7 @@ public class CategoryController{
 	
 //	// Read (get)
 	@GetMapping("/readCategory")
-	public Category ex5(@RequestParam("id") long id) {
+	public String ex5(@RequestParam("id") long id) {
 		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("cafe_test3");
 		EntityManager em = emf.createEntityManager();
@@ -41,11 +41,11 @@ public class CategoryController{
 		Category category = em.find(Category.class, id);
 		System.out.println(category);
 		tx.commit();
-		return category;
+		return category.toString();
 	}
 	
 	@PatchMapping("/updateCategory")
-	public Category updateCategory(@RequestParam("index") Long index ,@RequestParam("newname") String newName ) {
+	public String updateCategory(@RequestParam("index") Long index ,@RequestParam("newname") String newName ) {
 //		String findQuery = "select m from Category as m where m."
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("cafe_test3");
 		EntityManager em = emf.createEntityManager();
@@ -58,18 +58,27 @@ public class CategoryController{
 		System.out.println(category);
 		
 		tx.commit();
-		return category;
+		return category.toString();
 	}
 	
-	@DeleteMapping("/delCategory")
-	public Category deleteCategory(@RequestParam("c_index") Long id) {
+	@DeleteMapping("/deleteCategory")
+	public String deleteCategory(@RequestParam("category_id") Long categoryId) {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("cafe_test3");
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
-		tx.begin();
-		Category category = em.find(Category.class, id);
-		em.remove(category);
-		tx.commit();
-		return category;
+		String result = "";
+		try {
+			tx.begin();
+			Category category = em.find(Category.class, categoryId);
+			em.remove(category);
+			result = category.toString();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			tx.commit();
+			em.close();
+			emf.close();
+		}
+		return result;
 	}
 }

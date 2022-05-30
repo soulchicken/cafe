@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,10 +18,19 @@ public class Category {
 	@Column(name = "CATEGORY_NAME")
 	private String categoryName;
 	
-	@OneToMany(mappedBy = "category")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "category")
 	private List<Posting> posting = new ArrayList<>();
 	
 	
+	public List<Posting> getPosting() {
+		return posting;
+	}
+	public void setPosting(List<Posting> posting) {
+		this.posting = posting;
+	}
+	public Long getCategoryId() {
+		return categoryId;
+	}
 	public void setCategoryId(Long categoryId) {
 		this.categoryId = categoryId;
 	}
@@ -30,4 +40,14 @@ public class Category {
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
 	}
+	@Override
+	public String toString() {
+		String result = "Category [categoryId=" + categoryId + ", categoryName=" + categoryName + ", posting size=" + posting.size() + "]";
+		for (Posting post : posting) {
+			result += post.getTitle() + "\n";
+		}
+		return result;
+	}
+	
+	
 }

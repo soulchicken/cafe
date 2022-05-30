@@ -3,6 +3,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,11 +16,11 @@ public class Posting {
 	@Column(name = "POST_ID")
 	private long postId;
 	
-	@ManyToOne // student와 major의 관계는 다대일 (N:1)
-	@JoinColumn(name = "user_id")
+	@ManyToOne(fetch = FetchType.LAZY, targetEntity = User.class) // student와 major의 관계는 다대일 (N:1)
+	@JoinColumn(name = "user_index")
 	private User user;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY, targetEntity = Category.class)
 	@JoinColumn(name = "CATEGORY_ID")
 	private Category category;
 	
@@ -49,7 +50,6 @@ public class Posting {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
 	public User getUser() {
 		return user;
 	}
@@ -62,6 +62,17 @@ public class Posting {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
+	@Override
+	public String toString() {
+		return "Posting [postId=" + postId + ", user=" + user.getName() + ", category=" + category.getCategoryName() + ", title=" + title
+				+ ", description=" + description + "]";
+	}
+	
+	
+
+
+
+
 	
 	
 }
