@@ -5,10 +5,10 @@
 
 ## **00. 팀원 소개**
 
--   **[황솔희](https://github.com/solhee-hwang)** : asd 구현
--   **[강  건](https://github.com/gun-0208)** : E 구현
--   **[김도현](https://github.com/thovy)** : A를 구현
--   **[김동현](https://github.com/soulchicken)** : qe 구현
+-   **[황솔희](https://github.com/solhee-hwang)** 
+-   **[강  건](https://github.com/gun-0208)** 
+-   **[김도현](https://github.com/thovy)** 
+-   **[김동현](https://github.com/soulchicken)** 
 
 ## **01. 기술 스택**
 
