@@ -1,0 +1,393 @@
+{
+	"info": {
+		"_postman_id": "99badb4c-fdad-44b2-a804-39dca0e3457a",
+		"name": "cafe_project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"kim12553\",\r\n    \"password\" : \"kim125555345\",\r\n    \"name\" : \"kim_koimmmm\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}register",
+							"host": [
+								"{{base_url}}register"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "kanggun1234",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "gun12345",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "gunKang",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "readUser",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}idInfo?index=1&name=gun_koimmmm&password=gun125555345",
+							"host": [
+								"{{base_url}}idInfo"
+							],
+							"query": [
+								{
+									"key": "index",
+									"value": "1"
+								},
+								{
+									"key": "name",
+									"value": "gun_koimmmm"
+								},
+								{
+									"key": "password",
+									"value": "gun125555345"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"1\",\r\n    \"password\" : \"gun125555345\",\r\n    \"updatePwd\" : \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/pwdEdit",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pwdEdit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}delUser?index=1&id=gun1234&password=1234",
+							"host": [
+								"{{base_url}}delUser"
+							],
+							"query": [
+								{
+									"key": "index",
+									"value": "1"
+								},
+								{
+									"key": "id",
+									"value": "gun1234"
+								},
+								{
+									"key": "password",
+									"value": "1234"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "posting",
+			"item": [
+				{
+					"name": "createPosting",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"gun1234\",\r\n    \"post\":\"heeloooo\",\r\n    \"category\": \"hellollo\" \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}uploadPosting?id=2&post=hellomynameisgunmmm&category=2&title=hello3",
+							"host": [
+								"{{base_url}}uploadPosting"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								},
+								{
+									"key": "post",
+									"value": "hellomynameisgunmmm"
+								},
+								{
+									"key": "category",
+									"value": "2"
+								},
+								{
+									"key": "title",
+									"value": "hello3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postRead",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}readPosting?id=2&postId=1",
+							"host": [
+								"{{base_url}}readPosting"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								},
+								{
+									"key": "postId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePosting",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "updatePosting?id=1&title=kkkk&description=kkkkkkk&category=3",
+							"host": [
+								"updatePosting"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "title",
+									"value": "kkkk"
+								},
+								{
+									"key": "description",
+									"value": "kkkkkkk"
+								},
+								{
+									"key": "category",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePosting",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "deletePosting?id=1",
+							"host": [
+								"deletePosting"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "addcategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}createCategory?name=helloo3",
+							"host": [
+								"{{base_url}}createCategory"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "helloo3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "readCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}readCategory?id=2",
+							"host": [
+								"{{base_url}}readCategory"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCategory",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}updateCategory?index=2&newname=newName",
+							"host": [
+								"{{base_url}}updateCategory"
+							],
+							"query": [
+								{
+									"key": "index",
+									"value": "2"
+								},
+								{
+									"key": "newname",
+									"value": "newName"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCategory",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}delCategory?c_index=1",
+							"host": [
+								"{{base_url}}delCategory"
+							],
+							"query": [
+								{
+									"key": "c_index",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080/cafe_test3/",
+			"type": "default"
+		}
+	]
+}
