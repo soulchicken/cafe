@@ -3,7 +3,7 @@
 
 [프로젝트 리포지토리](https://github.com/soulchicken/cafe-API)
 
-## **00. 팀원 소개**
+## **00. 팀원 명단**
 
 -   **[황솔희](https://github.com/solhee-hwang)** 
 -   **[강  건](https://github.com/gun-0208)** 
@@ -32,7 +32,11 @@
 - **🔖 범주(category)**
     1. 사물의 개념을 분류함에 있어서 그 이상 일반화할 수 없는 가장 보편적이고 기본적인 유개념이다.
     2. 게시글 작성 시 본인만의 분류를 만들기 위해 사용한다.
+- **🚀 게시글(posting)**
+    1. 러 사람이 볼 수 있도록 인터넷 게시판에 올린 글
+
 ## **04. 기능 명세**
+[API DOCS](https://documenter.getpostman.com/view/21185842/Uz5CNdz2)
 
 ### 회원관련 기능
 - 아이디,비밀번호,이름을 입력하면 회원테이블에 정보가 저장된다.
