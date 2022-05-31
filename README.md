@@ -58,7 +58,7 @@
 
 ## **05. ERD (Entity Relationship Diagram)**
 - ERD 그림 캡처본
-![ERD]()
+![ERD](./진짜최종파이널.png)
 
 ### **user** 테이블
 | column          | data type | 설명      |
